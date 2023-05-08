@@ -62,60 +62,6 @@ scheduler:
 
 ## 一键部署
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/6-WHtb?referralCode=59QKWS)
-
-点这个就可以复制我们模板一键部署到Railway上，最重要的是不用担心科学上网的问题！
-
-![Railway](doc/Railway.jpg)
-
-## 架构设计
-
-### 架构图
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/6-WHtb)
 
 
-
-![架构图](doc/%E6%9E%B6%E6%9E%84%E5%9B%BE.png)
-
-* Adapter层：负责任务调度（目前采用spring任务调度,可以随意切换成xxl-job等等）
-* App层：由于没有复杂跨领域调用，所以空置。
-* Domain层：负责核心领域对象的编排，不依赖于任务框(包括spring)。
-* Infrastructure层：负责与外界API对接的具体技术细节实现。
-
-### 核心领域建模
-
-* `ChatBot`为聚合根负责每一个问答的核心业务逻辑包含一个`AnswerEngine`实体和`Platform`实体
-* `AnswerEngine`实体负责根据提问对问题进行相应
-* `Platform`实体负责从平台爬取问题并使用api进行回答
-
-![核心领域建模](doc/%E6%A0%B8%E5%BF%83%E9%A2%86%E5%9F%9F%E5%BB%BA%E6%A8%A1.png)
-
-## 拓展开发
-
-### 支持平台拓展
-
-![支持平台策略](doc/%E6%94%AF%E6%8C%81%E5%B9%B3%E5%8F%B0%E7%AD%96%E7%95%A5.png)
-
-1. domain层增加一个`PlatformType`枚举
-2. infra层增加一个`Platform`实现类
-
-### 支持回答模型拓展
-
-![回答引擎策略](doc/%E5%9B%9E%E7%AD%94%E5%BC%95%E6%93%8E%E7%AD%96%E7%95%A5.png)
-
-1. domain层增加一个`AnswerEngineType`枚举
-2. infra层增加一个`AnswerEngine`实现类
-
-## RoadMap
-
-- [ ] 增加敏感词过滤
-- [ ] 增加使用eventbus的方式处理消息
-- [ ] 接入微信群
-
-## 欢迎交流
-后续会根据逐步完善，欢迎大家提出宝贵意见，也欢迎大家提issue pr，还有star⭐️。
-
-可以领取优惠加入星球使劲向我提问哈~
-
-<img src="doc/星球优惠券.png" alt="星球展示" width="50%;" height="50%" />
-
-<img src="doc/QRcode_C1.png" alt="星球展示" width="50%;" height="50%" />
