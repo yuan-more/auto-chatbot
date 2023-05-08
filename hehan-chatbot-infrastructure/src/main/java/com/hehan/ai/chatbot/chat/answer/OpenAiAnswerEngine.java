@@ -55,7 +55,7 @@ public class OpenAiAnswerEngine implements AnswerEngine {
                 .model(ChatCompletion.Model.GPT_3_5_TURBO.getName())
                 .messages(Collections.singletonList(message))
                 .maxTokens(3000)
-                .temperature(0.9)
+                .temperature(0.3)
                 .build();
         ChatCompletionResponse chatCompletionResponse = chatGPT.chatCompletion(chatCompletion);
         String answer = chatCompletionResponse.getChoices().stream()
