@@ -8,10 +8,6 @@
 
 ![代码演示](doc/%E4%BB%A3%E7%A0%81%E6%BC%94%E7%A4%BA.png)
 
-知识星球演示：
-
-<img src="doc/%E6%98%9F%E7%90%83%E6%BC%94%E7%A4%BA.PNG" alt="星球展示" width="50%;" heigh="50%" />
-
 ## 一键启动
 
 1. 修改`start`模块下的`application.yml`，或者通过**环境变量**的方式不用把密码硬编码在配置中
